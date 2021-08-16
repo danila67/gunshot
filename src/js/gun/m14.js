@@ -29,9 +29,7 @@ export class M14 {
     for (let i = 0; i < player.array.length; i++) {
       const p = player.array[i];
 
-      if(p.gun === null) return;
-
-      if (this.x >= p.x && this.x <= p.x2 && this.y >= p.y && this.y <= p.y2) {
+      if (this.x >= p.x && this.x <= p.x2 && this.y >= p.y && this.y <= p.y2 && p.gun === null) {
         this.player = p.index;
         this.have = true;
         p.gun = this.index;
