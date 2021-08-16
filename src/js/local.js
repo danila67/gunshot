@@ -3,7 +3,7 @@ import { hero, Hero } from "./hero";
 const raw = localStorage.getItem("gunshot_player"),
 person = JSON.parse(raw);
 
-localStorage.clear();
+//localStorage.clear();
 if (localStorage.getItem("gunshot_player")) {
 
   for (let i = 0; i < person.array.length; i++) {
