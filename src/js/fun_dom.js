@@ -5,6 +5,7 @@ export const fun_dom = {
   get_id: {
     complete: document.getElementById("button_complete"),
     login: document.getElementById("button_login"),
+    back: document.getElementById("button_back")
   },
   check() {
     this.get_id.complete.addEventListener('click', (event) => {
@@ -13,9 +14,15 @@ export const fun_dom = {
       hero.array[hero.number].play();
       hero.number++;
     });
+
     this.get_id.login.addEventListener('click', (event) => {
       dom_id.akk.style.display = 'block';
       dom_id.menu2.style.display = 'none';
+    });
+
+    this.get_id.back.addEventListener('click', (event) => {
+      dom_id.akk.style.display = 'none';
+      dom_id.menu2.style.display = 'block';
     });
   }
 }

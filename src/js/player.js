@@ -15,7 +15,7 @@ export class Player {
     this.down = false;
     this.left = false;
     this.right = false;
-    this.gun = 0;
+    this.gun = null;
   }
 
   check() {

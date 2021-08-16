@@ -25,15 +25,22 @@ export class Hero {
     this.name = name;
     this.scin = scin;
     this.index = index;
+    this.player = null;
     this.idName = '_' +this.name +'_' +this.index +'_';
     this.cretae();
   }
 
   play() {
-    player.array[player.number] = new Player(0, 0, this.scin, this.name, player.number, 'zeck');
-    hero.index = player.number;
-    dom_id.menu.style.display = 'none';
-    player.number++;
+    if (this.player === null) {
+      player.array[player.number] = new Player(0, 0, this.scin, this.name, player.number, 'zeck');
+      hero.index = player.number;
+      dom_id.menu.style.display = 'none';
+      this.player = player.number;
+      player.number++;
+    } else {
+      hero.index = this.player;
+      dom_id.menu.style.display = 'none';
+    }
   }
 
   cretae() {

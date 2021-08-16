@@ -13,7 +13,10 @@ hero.check();
 function draw() {
   ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
   localStorageReturn();
-  ctx.drawImage(backgrund[0], 0, 0)
+  ctx.beginPath();
+  ctx.fillStyle = 'green';
+  ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+  ctx.drawImage(backgrund[0], 500, 0, 500, 500);
   
   player.draw();
   weapon.draw();
