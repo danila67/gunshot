@@ -26,6 +26,7 @@ export class M14 {
   }
 
   give() {
+    if(this.have) return;
     for (let i = 0; i < player.array.length; i++) {
       const p = player.array[i];
 
@@ -68,3 +69,9 @@ m14.array[1] = new M14(1000, 400, 1)
 m14.array[2] = new M14(1000, 300, 2)
 m14.array[3] = new M14(1000, 200, 3)
 
+/*
+onNoAds - в onNoAds передается callback-функция, вызываемая, если рекламного контента нет.
+onStarted - запущен показ рекламного блока
+onCompleted - завершен показ блока рекламы
+onSkipped - показ блока рекламы был остановлен (нажата кнопка "пропустить")
+onClicked - был произведен клик по рекламному блоку*/
