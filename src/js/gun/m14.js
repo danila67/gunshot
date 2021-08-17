@@ -17,8 +17,13 @@ export class M14 {
 
   draw() {
     if(this.have) {
-      this.x = player.array[this.player].x;
-      this.y = player.array[this.player].y + 60;
+      if(this.who === 1) {
+        this.x = player.array[this.player].x;
+        this.y = player.array[this.player].y + 60;
+      } else {
+        this.x = player.array[this.player].x + 25;
+        this.y = player.array[this.player].y + 60;
+      }
     }
 
     ctx.drawImage(gunImage[this.who],this.x, this.y, 70, 20);
