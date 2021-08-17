@@ -1,54 +1,29 @@
-function returnGame() {
-	player.returnPlayer();
-	Zombie.returnZombie();
-	map.returnMap();
-	zombies.speed[0] = zombies.speed[1];
-}
+import { hero } from "./hero";
+import { ctx } from "./cnv";
+import { fun_dom } from "./fun_dom";
+import { localStorageReturn } from "./local";
+import { m14 } from "./gun/m14";
+import { player } from "./player";
+import { weapon } from "./gun/weapon";
+import { backgrund } from "./images";
 
-
-function drawImageRot(img,x,y,width,height,deg){
-    ctx.save()
-    var rad = deg * Math.PI / 180;
-    ctx.translate(x + width / 2, y + height / 2);
-    ctx.rotate(rad);    
-    ctx.drawImage(img,width / 2 * (-1),height / 2 * (-1),width,height);
-    ctx.restore();
-}
-
-var angle = 0;
+fun_dom.check();
+hero.check();
 
 function draw() {
-    ctx.beginPath();
-    ctx.fillStyle = 'green';
-	ctx.fillRect(0,0,canvas.width,canvas.height);
-	
-	localStorageReturn();
-	
-	
-	player.renewal();
-	player.check();
-	
-	map.draw();
-     
-     if(phone) {
-          controlPhone.draw();
-          controlPhone.check();
-     }
-     
-    // control.check();
-     
-     player.draw();
-     player.gun[player.quantityGun].draw();
-     zombies.draw();
-     
-     weapons.draw();
-     
-     things.drawBottle();
-     table.drawTable();
-	table.drawEnergy();
-	 table.drawLife();
-	 table.drawMenu();
-	//drawImageRot(upImage,starX,starY,200,200,angle);
+  ctx.clearRect(0, 0, 1000, 600);
+  localStorageReturn();
+  ctx.beginPath();
+  ctx.fillStyle = 'green';
+  ctx.fillRect(0, 0, 1000, 600);
+  ctx.drawImage(backgrund[0], 0, 0, 500, 500);
+  
+  player.draw();
+  weapon.draw();
+  m14.draw();
+
+  hero.checkScin();
+  m14.give();
 }
 
-setInterval (draw, 25);
+setInterval(draw,25);
