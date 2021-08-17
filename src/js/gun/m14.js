@@ -63,7 +63,7 @@ export class M14 {
     weapon.number++;
   }
 }
-
+ 
 export const m14 = {
   array: [],
   number: 0,

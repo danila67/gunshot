@@ -6,6 +6,7 @@ import { m14 } from "./gun/m14";
 import { player } from "./player";
 import { weapon } from "./gun/weapon";
 import { backgrund } from "./images";
+import { box } from "./object/box";
 
 fun_dom.check();
 hero.check();
@@ -21,9 +22,11 @@ function draw() {
   player.draw();
   weapon.draw();
   m14.draw();
+  box.draw();
 
   hero.checkScin();
   m14.give();
+  box.check();
 }
 
 setInterval(draw,25);

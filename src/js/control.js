@@ -15,6 +15,7 @@ document.addEventListener('keydown', function(event) {
       break;
     case 'KeyA':
       player.array[hero.index].left = true;
+      player.array[hero.index].go[3] = true;
       break;
     case 'KeyD':
       player.array[hero.index].right = true;

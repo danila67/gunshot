@@ -13,6 +13,7 @@ export class Player {
     this.down = false;
     this.left = false;
     this.right = false;
+    this.go = [true, true, true, true];
     this.gun = null;
 
     if(this.who === 'prisoners') {
@@ -28,13 +29,13 @@ export class Player {
     if(this.who === 'prisoners') this.position = 'right';
     else this.position = 'left';
 
-    if(this.up) this.y -= speed;
+    if(this.up && this.go[0]) this.y -= speed;
 
-    if(this.down) this.y += speed;
+    if(this.down && this.go[1]) this.y += speed;
 
-    if(this.left) this.x -= speed;
+    if(this.left && this.go[2]) this.x -= speed;
 
-    if(this.right) this.x += speed;
+    if(this.right && this.go[3]) this.x += speed;
   }
 
   draw() {
